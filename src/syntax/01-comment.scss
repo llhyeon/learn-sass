@@ -1,0 +1,15 @@
+$primary-color: #121212;
+
+body {
+  // 본문에 기본 글자 속성은 primary-color 변수의 값으로 지정
+  color: $primary-color;
+
+  /* 임시로 배경 색상 지정 - yellow */
+  background: yellow;
+}
+
+p {
+  .sans {
+    font: SpoqaHanSans, Helvetica, Verdana, sans-serif;
+  }
+}

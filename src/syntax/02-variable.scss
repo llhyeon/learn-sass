@@ -1,0 +1,34 @@
+$base-color: #bf2243;
+$border-color: rgba($base-color, 0.7);
+$variable: 1rem;
+
+.alert {
+  border: 1px solid $border_color; // ←
+}
+
+:root {
+  --primary-color: red;
+}
+
+$color: #22bf70;
+
+.rule-1 {
+  $variable: 2rem !global;
+
+  color: $color;
+  background: var(--primary-color);
+}
+
+$base-color: purple !default;
+
+:root {
+  --primary-color: yellow;
+}
+
+$color: #2bcacd;
+
+.rule-2 {
+  margin: $variable;
+  color: $base-color;
+  background: var(--primary-color);
+}
