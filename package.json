@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "run-p serve watch",
+    "dev": "run-p serve update",
     "serve": "live-server --port=8090 --host=localhost",
     "sass": "sass src/syntax:src/css",
     "watch": "npm run sass -- --watch",
