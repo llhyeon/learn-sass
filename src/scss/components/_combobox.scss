@@ -5,54 +5,46 @@
 .combobox {
   $light-text-color: $secondary-color;
   $dark-text-color: $accent-color;
+  $font-mobile: $text-sm;
+  $font-tablet: $text-base;
+  $font-desktop: $text-xl;
 
   color: light-dark($light-text-color, $dark-text-color);
 
   border: 1px solid currentColor;
-  display: inline-flex;
-  // flex-flow: row nowrap;
-  // align-items: center;
-  // padding: 6px 16px;
-  border-radius: 16px;
-  position: relative;
-  font-size: 14px;
+  font-size: $font-mobile;
 
-  @media (min-width: 1024px) {
-    font-size: 18px;
-  }
+  @include flex-container(row nowrap items-center, inline-flex);
+  @include rounded();
+  @include relative-container(svg);
 
   svg {
-    position: absolute;
-    top: 50%;
-    translate: 0 -50%;
     pointer-events: none;
 
+    font-size: $font-mobile;
+
+    @include mq(lg) {
+      font-size: $font-desktop;
+    }
+
     &:nth-of-type(1) {
-      left: 8px;
+      left: $spacing-sm;
     }
 
     &:nth-of-type(2) {
-      right: 8px;
+      right: $spacing-sm;
     }
   }
 
   label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+    @include a11y-hidden;
   }
 
   select {
     color: inherit;
     appearance: none;
     border: 0;
-    padding-inline: 24px;
+    padding: $spacing-base $spacing-5xl;
     background-color: transparent;
   }
 }
