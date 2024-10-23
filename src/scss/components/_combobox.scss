@@ -1,5 +1,14 @@
+@use "./icons";
+@use "../abstracts" as *;
+@use "../base";
+
 .combobox {
-  border: 1px solid red;
+  $light-text-color: $secondary-color;
+  $dark-text-color: $accent-color;
+
+  color: light-dark($light-text-color, $dark-text-color);
+
+  border: 1px solid currentColor;
   display: inline-flex;
   // flex-flow: row nowrap;
   // align-items: center;
@@ -40,6 +49,7 @@
   }
 
   select {
+    color: inherit;
     appearance: none;
     border: 0;
     padding-inline: 24px;
