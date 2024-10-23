@@ -2,11 +2,10 @@
 @use "./../abstracts" as *;
 @use "./../components/logo";
 @use "./../components/buttons";
-@use "../components/menu";
+@use "./navigation";
 
 .header-container {
   background-color: rgba($white, 1);
-  // @include position(sticky, 0);
   position: sticky;
   top: 0;
   inset-block-start: 0;
