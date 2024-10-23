@@ -1,0 +1,67 @@
+@use "../base";
+@use "../abstracts" as *;
+@use "./buttons";
+
+.product-card {
+  $block-size-sm: rem(500px);
+  $block-size-lg: rem(650px);
+  $gap: $spacing-2xl; // 16px
+  $spacing-start-sm: $spacing-8xl; // 40
+  $spacing-start-lg: $spacing-9xl; // 60
+
+  @include flex-container(column items-center);
+  gap: $gap;
+
+  @include block-size($block-size-sm);
+  @include padding-block-start($spacing-start-sm);
+  @include mq(lg) {
+    @include block-size($block-size-lg);
+    @include padding-block-start($spacing-start-lg);
+  }
+
+  // 어두운 배경
+  &.dark-bg {
+    $text-color: $white;
+    $bg-color: $black;
+
+    color: $text-color;
+    background-color: $bg-color;
+  }
+
+  &__headline {
+    $headline-sm: $text-4xl;
+    $headline-lg: $text-5xl;
+
+    font-size: $headline-sm;
+    line-height: $line-normal;
+
+    @include mq(lg) {
+      font-size: $headline-lg;
+    }
+  }
+
+  .line-break span {
+    @include flex-container(row justify-center);
+
+    @include mq(lg) {
+      display: inline;
+    }
+  }
+
+  // 출시일 추후 공개
+  &__release {
+    $release-text: $text-base; // 16px
+    // $color: $gray;
+    $color: $secondary-color;
+
+    font-size: $release-text; // 16
+    color: $color; // gray
+  }
+
+  &__links {
+    $gap: $spacing-2xl;
+
+    @include flex-container(row);
+    gap: $gap;
+  }
+}
